@@ -14,8 +14,7 @@ Screenshots
 ### CSS
 ##![HTML](screenshots/css.png)
 
-### JavaScript
-##![HTML](screenshots/js.png)
+
 
 Installation
 ---
