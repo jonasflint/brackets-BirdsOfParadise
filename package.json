@@ -1,0 +1,21 @@
+{
+    "title": "Birds Of Paradise",
+    "name": "Birds of Paradise",
+    "description": "Birds of Paradise Theme",
+    "version": "1.1.0",
+    "author": "Jonas Flint <jonas@zerooneproductions.net> (http://jonasflint.com/)",
+    "homepage": "https://github.com/jive01/BirdsofParadise-Brackets",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:Brackets-Theme/Spacegray-Brackets.git"
+    },
+    "license": "MIT",
+    "engines": {
+        "brackets": ">=1.0.0"
+    },
+    "theme": {
+        "file": "theme.less",
+        "dark": true
+    },
+    "keywords": ["theme"]
+}

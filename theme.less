@@ -1,0 +1,150 @@
+/* Define some variables used in multiple places */
+@background: #382927;
+@foreground: #E6E0C6;
+
+/* Code Styling */
+
+.CodeMirror, .CodeMirror-scroll {
+    background-color: @background;
+    color: @foreground;
+   
+}
+
+.CodeMirror-focused .CodeMirror-activeline-background {
+    background: @background;
+}
+
+.show-line-padding .CodeMirror-focused .CodeMirror-activeline-background {
+    box-shadow: inset 15px 0 0 0 #000;
+}
+
+.CodeMirror-focused .CodeMirror-activeline {
+    .CodeMirror-gutter-elt {
+        background: rgba(43, 32, 30, 1);
+        color: #7D6044;
+    }
+    .inline-widget .CodeMirror-gutter-elt {
+        color: #7D6044;
+    }
+}
+
+.cm-atom {color: #E0DA7E;}
+.cm-string {color: #E0DA7E; font-style: italic;}
+.cm-string-2 {color: #C6ACC6;}
+.cm-hr {color: #C6ACC6;}
+.cm-number {color: #C6ACC6; }
+.cm-attribute, .cm-plus {color: #EF734A;}
+.cm-def {color: @foreground;}
+.cm-variable {color: #F0B751;}
+.cm-variable-2 {color: #81AE9D;}
+.cm-operator {color: #CCF1FC;}
+.cm-meta {color: #EF734A !important;}
+.cm-bracket {color: #9AC1C6; }
+.cm-comment {color: #7D6044; background: #2E2220;}
+.cm-error, .cm-minus {background: rgba(207, 59, 60, 0.2); color: #cf3b3c;}
+.cm-header {color: #d85896;}
+.cm-link {color: #b77fdb; text-decoration: none;}
+.cm-rangeinfo {color: #6c71c4;}
+.cm-builtin, .cm-quote {color: #e8c884;}
+.cm-qualifier {color: #E6E0C6;}
+.cm-keyword {color: #D25846;}
+.cm-tag {color: #9AC1C6;}
+.cm-property {color: #EF734A;}
+.cm-variable-3 {color: #A8DDC7;}
+
+/* Extra CSS */
+
+.CodeMirror-searching {
+    background-color: #d3cd69;
+    &.searching-current-match {
+        background-color: #f6a644;
+    }
+}
+
+
+.CodeMirror-cursor {
+    border-left: 1px solid #7D6044 !important;
+}
+
+.CodeMirror-gutters {
+    background-color: #2E2220;
+    border-right: 1px solid #2B201F;
+    border-left: 1px solid #2B201F;
+    color: #7D6044!important;
+}
+
+.CodeMirror-linenumber {
+    color: #5E4D4B;
+}
+
+.CodeMirror .CodeMirror-selected {
+    background: #241B19;
+}
+.CodeMirror-focused .CodeMirror-selected {
+    background: #241B19;
+}
+
+.CodeMirror-matchingbracket, .CodeMirror-matchingtag {
+    /* Ensure visibility against gray inline editor background */
+    background-color: rgba(240, 241, 245, 0.2);
+    color: @foreground !important;
+}
+
+.CodeMirror-overwrite .CodeMirror-cursor {
+    border-left: none !important;
+    border-bottom: 1px solid #fff;
+}
+
+/*
+    CodeMirror's use of descendant selectors for certain styling causes problems when editors are
+    nested because, for items in the inner editor, the left-hand clause in the selector will now
+    match either the actual containing CodeMirror instance *OR* the outer "host" CodeMirror instance.
+
+    TODO (issue #324): We'll still have problems if editors can be nested more than one level deep,
+    or if any other descendant-selector-driven CM styles can differ between inner & outer editors
+    (potential problem areas include line wrap and coloring theme: basically, anything in codemirror.css
+    that uses a descandant selector where the CSS class name to the left of the space is something
+    other than a vanilla .CodeMirror)
+ */
+.CodeMirror {
+    .CodeMirror {
+        background: transparent;
+    }
+
+    .CodeMirror .CodeMirror-gutters {
+        background: transparent;
+        border-right: none;
+        color: #7D6044!important;
+    }
+
+    .CodeMirror .CodeMirror-activeline-background {
+        background: transparent;
+    }
+
+    .CodeMirror .CodeMirror-activeline .CodeMirror-gutter-elt {
+        background: transparent;
+        color: #7D6044;
+    }
+
+    .CodeMirror-focused .CodeMirror-activeline-background {
+        background: #7D6044;
+    }
+
+    .CodeMirror-focused .CodeMirror-activeline {
+        .CodeMirror-gutter-elt {
+            background: rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+    }
+}
+
+/* Non-editor styling */
+
+.image-view,
+.not-editor {
+    background-color: @background;
+}
+
+.view-pane .image-view {
+    color: @foreground;
+}
